@@ -1,0 +1,76 @@
+﻿@using StudentInformationSystemWebApp.Models
+@model StudentInformationSystemWebApp.Models.StudentCourseViewModel
+@{
+    ViewBag.Title = "Save";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Save</h2>
+
+@using (Html.BeginForm("Save", "StudentCourse", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Save Student's Courses </h4>
+    <hr />
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Save"/>
+            <input type="submit" class="btn btn-default" value="New" />
+        </div>
+    </div>
+    <div class="form-group">
+        @if (ViewBag.messege != null)
+        {
+            <label><b>@ViewBag.messege</b></label>
+        }
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.StudentCourse.StudentId, new {@class = "col-md-2 control-label"})
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.StudentCourse, new SelectList(Model.StudentList, "Id", "Name"), "Select Student", new {@class = "form-control"})
+            @Html.ValidationMessageFor(m => m.StudentCourse.StudentId)
+        </div>
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.SemesterList, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.SemesterList, new SelectList(Model.SemesterList, "Code","Name"),"Select Semester", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.SemesterList)
+        </div>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Course Code</th>
+                <th>Course Name</th>
+                <th>Select</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Course course in Model.CourseList)
+            {
+                <tr>
+                    <td>@course.Code</td>
+                    <td>@course.Name</td>
+                    <td>
+                        <input data-id="@course.Id" class="toggle-class" type="checkbox" data-toggle="toggle">
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+    
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
