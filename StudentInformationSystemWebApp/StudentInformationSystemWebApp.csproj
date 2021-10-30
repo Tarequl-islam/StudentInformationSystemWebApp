@@ -159,6 +159,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
@@ -168,8 +169,13 @@
     <Compile Include="Migrations\202110301137362_InitialModel.Designer.cs">
       <DependentUpon>202110301137362_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110301413227_CourseModelAdded.cs" />
+    <Compile Include="Migrations\202110301413227_CourseModelAdded.Designer.cs">
+      <DependentUpon>202110301413227_CourseModelAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Course.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -222,6 +228,7 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Student\Save.cshtml" />
+    <Content Include="Views\Course\Save.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -236,6 +243,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202110301137362_InitialModel.resx">
       <DependentUpon>202110301137362_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110301413227_CourseModelAdded.resx">
+      <DependentUpon>202110301413227_CourseModelAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
