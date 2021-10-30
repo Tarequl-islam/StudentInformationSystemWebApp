@@ -1,0 +1,120 @@
+﻿@model StudentInformationSystemWebApp.Models.Student
+@{
+    ViewBag.Title = "Save";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Save</h2>
+
+@using (Html.BeginForm("Save", "Student", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Save Student Information</h4>
+    <hr />
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Name)
+        </div>
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.BirthDate, new {@class = "col-md-2 control-label"})
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.BirthDate, new {@class = "form-control"})
+            @Html.ValidationMessageFor(m => m.BirthDate)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Contact, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Contact, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Contact)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.FatherName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.FatherName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.FatherName)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.FatherOcupasion, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.FatherOcupasion, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.FatherOcupasion)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.FatherContact, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.FatherContact, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.FatherContact)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.MotherName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.MotherName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.MotherName)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.MotherOcupasion, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.MotherOcupasion, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.MotherOcupasion)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.MotherContact, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.MotherContact, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.MotherContact)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.EntryDate, new {@class = "col-md-2 control-label"})
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.EntryDate, new {@class = "form-control"})
+            @Html.ValidationMessageFor(m => m.EntryDate)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.UpdateDate, new {@class = "col-md-2 control-label"})
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.UpdateDate, new {@class = "form-control"})
+            @Html.ValidationMessageFor(m => m.UpdateDate)
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Register"/>
+        </div>
+    </div>
+    <div class="form-group" style="align-content: center">
+        @if (ViewBag.messege != null)
+        {
+            <label><b>@ViewBag.messege</b></label>
+        }
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
