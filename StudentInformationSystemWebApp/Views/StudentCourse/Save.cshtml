@@ -29,16 +29,16 @@
     <div class="form-group">
         @Html.LabelFor(m => m.StudentCourse.StudentId, new {@class = "col-md-2 control-label"})
         <div class="col-md-10">
-            @Html.DropDownListFor(m => m.StudentCourse, new SelectList(Model.StudentList, "Id", "Name"), "Select Student", new {@class = "form-control"})
+            @Html.DropDownListFor(m => m.StudentCourse.StudentId, new SelectList(Model.StudentList, "Id", "Name"), "Select Student", new {@class = "form-control"})
             @Html.ValidationMessageFor(m => m.StudentCourse.StudentId)
         </div>
     </div>
     
     <div class="form-group">
-        @Html.LabelFor(m => m.SemesterList, new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.StudentCourse.SemesterCode, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.DropDownListFor(m => m.SemesterList, new SelectList(Model.SemesterList, "Code","Name"),"Select Semester", new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.SemesterList)
+            @Html.DropDownListFor(m => m.StudentCourse.SemesterCode, new SelectList(Model.SemesterList, "Code","Name"),"Select Semester", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.StudentCourse.SemesterCode)
         </div>
     </div>
     <table class="table table-bordered">
@@ -56,6 +56,7 @@
                     <td>@course.Code</td>
                     <td>@course.Name</td>
                     <td>
+                        
                         <input data-id="@course.Id" class="toggle-class" type="checkbox" data-toggle="toggle">
                     </td>
                 </tr>
