@@ -1,3 +1,10 @@
 # Student Information System
 
-## Tech Stach: .NET MVC, Entity Framework, Jquery, Bootstrap, Ajax
+## Tech Stack:
+ * .NET MVC
+ * C#
+ * Entity Framework
+ * MS SQL Server
+ * Jquery 
+ * Bootstrap 
+ * Ajax
